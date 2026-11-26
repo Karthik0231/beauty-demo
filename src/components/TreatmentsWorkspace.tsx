@@ -46,17 +46,35 @@ export const TreatmentsWorkspace: React.FC<TreatmentsWorkspaceProps> = ({
     const ctx = gsap.context(() => {
       gsap.fromTo(
         '.ritual-tile',
-        { y: 24, opacity: 0.92 },
+        { y: 40, scale: 0.97, opacity: 0.9 },
         {
           y: 0,
+          scale: 1,
           opacity: 1,
-          duration: 0.75,
-          stagger: 0.08,
+          duration: 0.85,
+          stagger: 0.1,
           ease: 'power3.out',
           clearProps: 'transform,opacity',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 90%',
+            start: 'top 88%',
+            once: true,
+          },
+        }
+      );
+
+      gsap.fromTo(
+        '.ritual-image-clip img',
+        { scale: 1.1 },
+        {
+          scale: 1,
+          duration: 1.1,
+          stagger: 0.1,
+          ease: 'power3.out',
+          clearProps: 'transform',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 88%',
             once: true,
           },
         }
@@ -64,16 +82,16 @@ export const TreatmentsWorkspace: React.FC<TreatmentsWorkspaceProps> = ({
 
       gsap.fromTo(
         '.ritual-image-clip',
-        { clipPath: 'inset(3% 0% 3% 0% round 28px)' },
+        { clipPath: 'inset(5% 0% 5% 0% round 28px)' },
         {
           clipPath: 'inset(0% 0% 0% 0% round 28px)',
-          duration: 0.9,
-          stagger: 0.08,
+          duration: 0.95,
+          stagger: 0.1,
           ease: 'power3.out',
           clearProps: 'clipPath',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 90%',
+            start: 'top 88%',
             once: true,
           },
         }

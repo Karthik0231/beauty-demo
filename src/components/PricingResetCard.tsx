@@ -25,17 +25,18 @@ export const PricingResetCard: React.FC<PricingResetCardProps> = ({
     const ctx = gsap.context(() => {
       gsap.fromTo(
         '.pricing-tile',
-        { y: 20, opacity: 0.92 },
+        { y: 32, scale: 0.98, opacity: 0.9 },
         {
           y: 0,
+          scale: 1,
           opacity: 1,
-          duration: 0.65,
-          stagger: 0.06,
+          duration: 0.75,
+          stagger: 0.07,
           ease: 'power3.out',
           clearProps: 'transform,opacity',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 90%',
+            start: 'top 88%',
             once: true,
           },
         }

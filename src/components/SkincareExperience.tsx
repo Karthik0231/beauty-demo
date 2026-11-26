@@ -11,10 +11,10 @@ gsap.registerPlugin(ScrollTrigger);
 export const SkincareExperience: React.FC = () => {
   const containerRef = useRef<HTMLElement>(null);
   const stageRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const plateWrapRef = useRef<HTMLDivElement>(null);
   const plateImgRef = useRef<HTMLImageElement>(null);
   const [activeStage, setActiveStage] = useState(0);
 
-  // ScrollTrigger step activation + subtle staggered card reveal
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReduced || !containerRef.current) return;
@@ -22,21 +22,39 @@ export const SkincareExperience: React.FC = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         '.protocol-step-card',
-        { y: 22, opacity: 0.92 },
+        { y: 36, opacity: 0.85 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.7,
-          stagger: 0.08,
+          duration: 0.85,
+          stagger: 0.1,
           ease: 'power3.out',
           clearProps: 'transform,opacity',
           scrollTrigger: {
             trigger: containerRef.current,
-            start: 'top 90%',
+            start: 'top 85%',
             once: true,
           },
         }
       );
+
+      if (plateWrapRef.current) {
+        gsap.fromTo(
+          plateWrapRef.current,
+          { scale: 0.92, y: 36 },
+          {
+            scale: 1,
+            y: 0,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: 'top 88%',
+              end: 'top 30%',
+              scrub: 0.7,
+            },
+          }
+        );
+      }
 
       stageRefs.current.forEach((el, idx) => {
         if (!el) return;
@@ -53,16 +71,15 @@ export const SkincareExperience: React.FC = () => {
     return () => ctx.revert();
   }, []);
 
-  // Gentle crossfade + subtle cinematic float on active protocol photo
+  // Zoom-settle transition on active protocol photo
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReduced || !plateImgRef.current) return;
 
-    const el = plateImgRef.current;
     gsap.fromTo(
-      el,
-      { opacity: 0.7, scale: 1.04 },
-      { opacity: 1, scale: 1, duration: 0.75, ease: 'power3.out' }
+      plateImgRef.current,
+      { opacity: 0.65, scale: 1.1 },
+      { opacity: 1, scale: 1, duration: 0.9, ease: 'power3.out' }
     );
   }, [activeStage]);
 
@@ -74,7 +91,7 @@ export const SkincareExperience: React.FC = () => {
       ref={containerRef}
       className="relative bg-obsidian px-5 py-20 sm:px-8 sm:py-24 lg:px-12"
     >
-      <div className="mx-auto max-w-[1380px]">
+      <div className="mx-auto max-w-[1400px]">
         <div className="mb-12 max-w-[820px]">
           <RevealHeadline
             text="Four clinical stages. One restorative sequence."
@@ -98,7 +115,7 @@ export const SkincareExperience: React.FC = () => {
                   }}
                   type="button"
                   onClick={() => setActiveStage(index)}
-                  className={`protocol-step-card w-full rounded-[28px] p-6 text-left transition-colors duration-300 ${
+                  className={`protocol-step-card w-full rounded-[28px] p-6 text-left transition-all duration-300 ${
                     active
                       ? 'bg-carbon keyline-slate'
                       : 'bg-graphite/70 keyline-subtle hover:bg-carbon/60'
@@ -121,15 +138,18 @@ export const SkincareExperience: React.FC = () => {
           </div>
 
           {/* Right Sticky 28px Visual Frame */}
-          <div className="lg:sticky lg:top-24 lg:col-span-7">
-            <div className="group overflow-hidden rounded-[28px] bg-carbon keyline-subtle">
+          <div className="lg:sticky lg:top-28 lg:col-span-7">
+            <div
+              ref={plateWrapRef}
+              className="group overflow-hidden rounded-[28px] bg-carbon keyline-subtle will-change-transform"
+            >
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-obsidian">
                 <img
                   ref={plateImgRef}
                   key={current.step}
                   src={current.image}
                   alt={current.imageAlt}
-                  className="img-hover-zoom h-full w-full object-cover object-center"
+                  className="img-hover-zoom h-full w-full object-cover object-center will-change-transform"
                 />
               </div>
 

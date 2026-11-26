@@ -59,16 +59,33 @@ export const BookingConcierge: React.FC<BookingConciergeProps> = ({
     const ctx = gsap.context(() => {
       gsap.fromTo(
         '.booking-panel-reveal',
-        { y: 24, opacity: 0.92 },
+        { y: 36, scale: 0.98, opacity: 0.9 },
         {
           y: 0,
+          scale: 1,
           opacity: 1,
-          duration: 0.8,
+          duration: 0.85,
           ease: 'power3.out',
           clearProps: 'transform,opacity',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 90%',
+            start: 'top 88%',
+            once: true,
+          },
+        }
+      );
+
+      gsap.fromTo(
+        '.booking-panel-reveal img',
+        { scale: 1.09 },
+        {
+          scale: 1,
+          duration: 1.05,
+          ease: 'power3.out',
+          clearProps: 'transform',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 88%',
             once: true,
           },
         }

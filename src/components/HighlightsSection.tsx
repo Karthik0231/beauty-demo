@@ -32,40 +32,41 @@ export const HighlightsSection: React.FC<HighlightsSectionProps> = ({
     return () => window.clearInterval(id);
   }, [isPlaying]);
 
+  // Zoom-settling crossfade on chapter transition
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReduced || !imgRef.current) return;
 
     gsap.fromTo(
       imgRef.current,
-      { scale: 1.04, opacity: 0.72 },
-      { scale: 1, opacity: 1, duration: 0.85, ease: 'power3.out', clearProps: 'transform' }
+      { scale: 1.1, opacity: 0.65 },
+      { scale: 1, opacity: 1, duration: 1.05, ease: 'power3.out' }
     );
   }, [activeIndex]);
 
+  // Scroll-scrubbed frame expansion + clip-path reveal linked to Lenis
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced || !frameRef.current) return;
+    if (prefersReduced || !frameRef.current || !sectionRef.current) return;
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
         frameRef.current,
         {
-          y: 24,
-          opacity: 0.85,
-          clipPath: 'inset(6% 0% 6% 0% round 28px)',
+          scale: 0.91,
+          y: 44,
+          clipPath: 'inset(6% 4% 6% 4% round 28px)',
         },
         {
+          scale: 1,
           y: 0,
-          opacity: 1,
           clipPath: 'inset(0% 0% 0% 0% round 28px)',
-          duration: 0.95,
-          ease: 'power3.out',
-          clearProps: 'transform,clipPath',
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 82%',
-            once: true,
+            start: 'top 92%',
+            end: 'top 22%',
+            scrub: 0.75,
           },
         }
       );
@@ -80,7 +81,7 @@ export const HighlightsSection: React.FC<HighlightsSectionProps> = ({
       ref={sectionRef}
       className="surface-carbon-band px-5 py-20 sm:px-8 sm:py-24 lg:px-12"
     >
-      <div className="mx-auto max-w-[1380px]">
+      <div className="mx-auto max-w-[1400px]">
         <div className="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <RevealHeadline
             text="Get the atelier highlights."
@@ -104,15 +105,15 @@ export const HighlightsSection: React.FC<HighlightsSectionProps> = ({
         <div
           ref={frameRef}
           onClick={() => onWatchFilm(activeIndex)}
-          className="group relative cursor-pointer overflow-hidden rounded-[28px] bg-obsidian"
+          className="group relative cursor-pointer overflow-hidden rounded-[28px] bg-obsidian will-change-transform"
         >
-          <div className="relative aspect-[4/5] min-h-[420px] w-full overflow-hidden bg-obsidian sm:aspect-[16/9] sm:max-h-[640px]">
+          <div className="relative aspect-[4/5] min-h-[420px] w-full overflow-hidden bg-obsidian sm:aspect-[16/9] sm:max-h-[650px]">
             <img
               ref={imgRef}
               key={current.id}
               src={current.image}
               alt={current.imageAlt}
-              className="img-hover-zoom h-full w-full object-cover object-center"
+              className="img-hover-zoom h-full w-full object-cover object-center will-change-transform"
             />
             <div
               aria-hidden="true"

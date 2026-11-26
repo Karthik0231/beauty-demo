@@ -45,17 +45,35 @@ export const CompareWorkspace: React.FC<CompareWorkspaceProps> = ({
     const ctx = gsap.context(() => {
       gsap.fromTo(
         '.compare-reveal-block',
-        { y: 24, opacity: 0.92 },
+        { y: 38, scale: 0.97, opacity: 0.9 },
         {
           y: 0,
+          scale: 1,
           opacity: 1,
-          duration: 0.75,
+          duration: 0.85,
           stagger: 0.1,
           ease: 'power3.out',
           clearProps: 'transform,opacity',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 90%',
+            start: 'top 88%',
+            once: true,
+          },
+        }
+      );
+
+      gsap.fromTo(
+        '.compare-reveal-block img',
+        { scale: 1.09 },
+        {
+          scale: 1,
+          duration: 1.05,
+          stagger: 0.1,
+          ease: 'power3.out',
+          clearProps: 'transform',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 88%',
             once: true,
           },
         }

@@ -50,9 +50,9 @@ export default function HomePage() {
     if (prefersReduced) return;
 
     const lenis = new Lenis({
-      duration: 1.15,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.08,
       smoothWheel: true,
+      wheelMultiplier: 0.95,
     });
     lenisRef.current = lenis;
 
@@ -65,7 +65,12 @@ export default function HomePage() {
     gsap.ticker.add(tick);
     gsap.ticker.lagSmoothing(0);
 
+    const rafRefresh = requestAnimationFrame(() => {
+      ScrollTrigger.refresh();
+    });
+
     return () => {
+      cancelAnimationFrame(rafRefresh);
       gsap.ticker.remove(tick);
       lenis.destroy();
       lenisRef.current = null;
