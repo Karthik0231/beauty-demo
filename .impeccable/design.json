@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-26T15:50:45+05:30",
+  "title": "Design System: Maison Aurélia — Apple Style Reference",
+  "extensions": {
+    "colorMeta": {
+      "obsidian": { "role": "neutral", "displayName": "Obsidian", "canonical": "#000000", "tonalRamp": ["#000000", "#0e0e0e", "#1d1d1f", "#333336", "#6e6e73", "#86868b", "#d2d2d7", "#f5f5f7"] },
+      "apple-blue": { "role": "primary", "displayName": "Apple Blue", "canonical": "#0071e3", "tonalRamp": ["#002b5c", "#00448f", "#005ec2", "#0071e3", "#2997ff", "#66b3ff", "#99ccff", "#e5f2ff"] },
+      "copper-new": { "role": "secondary", "displayName": "Copper New", "canonical": "#b64400", "tonalRamp": ["#471b00", "#6e2900", "#913600", "#b64400", "#d95b12", "#eb8347", "#f4b089", "#fce5d8"] },
+      "optical-yellow": { "role": "tertiary", "displayName": "Optical Yellow", "canonical": "#ffd500", "tonalRamp": ["#4d4000", "#806b00", "#b39500", "#ffd500", "#ffe047", "#ffeb85", "#fff4bd", "#fffae6"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero statements." },
+      "headline": { "displayName": "Headline", "purpose": "Section headlines." },
+      "title": { "displayName": "Feature Stat", "purpose": "Tabular service metrics." },
+      "body": { "displayName": "Body", "purpose": "Descriptions and form controls." },
+      "label": { "displayName": "Utility Label", "purpose": "Nav labels and compact pills." }
+    },
+    "motion": [
+      { "name": "ease-luxury", "value": "power3.out", "purpose": "GSAP reveals and magnetic buttons." },
+      { "name": "scroll-smooth", "value": "Lenis 1.15s exponential", "purpose": "Lenis synchronized with ScrollTrigger." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Blue Purchase Pill",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary Book / Confirm control.",
+      "html": "<button class=\"ds-btn-buy\">Book</button>",
+      "css": ".ds-btn-buy { background: #0071e3; color: #ffffff; border: none; border-radius: 170px; padding: 7px 14px; font-size: 12px; line-height: 16px; letter-spacing: -0.12px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Midnight Hardware Gallery",
+    "overview": "Apple Style Reference tokens applied to luxury skincare, facial bodywork, hair architecture, and editorial complexion artistry.",
+    "keyCharacteristics": [
+      "Obsidian #000000 stages and Carbon #1d1d1f comparison panels",
+      "28px corner geometry with zero drop shadows",
+      "Apple Blue #0071e3 conversion pills and White #ffffff reset directory"
+    ],
+    "rules": [],
+    "dos": ["Do use 28px corners on media frames, feature tiles, and comparison panels."],
+    "donts": ["Don't add drop shadows or deviate from the Apple Style Reference palette."]
+  }
+}

@@ -1,0 +1,292 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "tailwindcss";
+
+@theme {
+  /* Dark Surfaces Preserved */
+  --color-obsidian: #000000;
+  --color-graphite: #0e0e0e;
+  --color-carbon: #1d1d1f;
+  --color-steel: #333336;
+  --color-slate: #6e6e73;
+  --color-ash: #86868b;
+  --color-porcelain: #f5f5f7;
+  --color-white: #ffffff;
+
+  /* Official Brand Green Accents (from Runbook DESIGN.md tokens) */
+  --color-primary: #C4F428;
+  --color-on-primary: #000000;
+  --color-secondary: #DFE7C9;
+  --color-tertiary: #A5D617;
+  --color-lime-accessible: #4B6800;
+
+  /* Mapped Accent Roles */
+  --color-apple-blue: #C4F428;
+  --color-electric-link: #C4F428;
+  --color-cobalt-link: #4B6800;
+  --color-copper-new: #A5D617;
+  --color-optical-yellow: #C4F428;
+
+  /* Typography */
+  --font-sf-pro-text: 'SF Pro Text', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sf-pro-display: 'SF Pro Display', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Radii */
+  --radius-md: 4px;
+  --radius-lg: 10px;
+  --radius-2xl: 20px;
+  --radius-3xl: 28px;
+  --radius-3xl-2: 32px;
+  --radius-3xl-3: 36px;
+  --radius-full: 120px;
+  --radius-full-2: 170px;
+  --radius-full-3: 980px;
+  --radius-full-4: 999px;
+  --radius-full-5: 9999px;
+}
+
+:root {
+  --color-obsidian: #000000;
+  --color-graphite: #0e0e0e;
+  --color-carbon: #1d1d1f;
+  --gradient-carbon: linear-gradient(#1d1d1f, #000000 288px);
+  --color-steel: #333336;
+  --color-slate: #6e6e73;
+  --color-ash: #86868b;
+  --color-porcelain: #f5f5f7;
+  --color-white: #ffffff;
+  --color-primary: #C4F428;
+  --color-on-primary: #000000;
+  --color-secondary: #DFE7C9;
+  --color-tertiary: #A5D617;
+
+  --font-sf-pro-text: 'SF Pro Text', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sf-pro-display: 'SF Pro Display', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --text-utility-nav: 12px;
+  --leading-utility-nav: 1.33;
+  --tracking-utility-nav: -0.12px;
+  --text-body: 14px;
+  --leading-body: 1.29;
+  --tracking-body: -0.224px;
+  --text-body-strong: 14px;
+  --leading-body-strong: 1.29;
+  --tracking-body-strong: -0.224px;
+  --text-section-nav: 17px;
+  --leading-section-nav: 1.47;
+  --tracking-section-nav: -0.374px;
+  --text-product-label: 19px;
+  --leading-product-label: 1.21;
+  --tracking-product-label: 0.228px;
+  --text-feature-stat: 28px;
+  --leading-feature-stat: 1;
+  --tracking-feature-stat: 0.196px;
+  --text-hero-product-name: 32px;
+  --leading-hero-product-name: 1.13;
+  --tracking-hero-product-name: 0.128px;
+  --text-display: 80px;
+  --leading-display: 1.05;
+  --tracking-display: -1.2px;
+  --text-display-xl: 96px;
+  --leading-display-xl: 1.04;
+  --tracking-display-xl: -1.44px;
+
+  --shadow-subtle: rgb(40, 40, 40) 0px 0px 0px 1px;
+  --shadow-subtle-2: rgb(110, 110, 115) 0px 0px 0px 1px;
+
+  --ease-runbook: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+
+  color-scheme: dark;
+}
+
+html {
+  background-color: var(--color-obsidian);
+  color: var(--color-porcelain);
+  font-family: var(--font-sf-pro-text);
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.224px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-obsidian);
+  color: var(--color-porcelain);
+  overflow-x: clip;
+}
+
+::selection {
+  background-color: #C4F428;
+  color: #0E0F0D;
+}
+
+input,
+select,
+textarea {
+  caret-color: #C4F428;
+}
+
+:focus-visible {
+  outline: 1.5px solid #C4F428;
+  outline-offset: 2px;
+}
+
+a {
+  text-underline-offset: 3px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333336;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A5D617;
+}
+
+/* Type Scale Roles */
+.type-utility-nav {
+  font-family: var(--font-sf-pro-text);
+  font-size: var(--text-utility-nav);
+  font-weight: 400;
+  line-height: var(--leading-utility-nav);
+  letter-spacing: var(--tracking-utility-nav);
+}
+
+.type-body {
+  font-family: var(--font-sf-pro-text);
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+}
+
+.type-body-strong {
+  font-family: var(--font-sf-pro-text);
+  font-size: var(--text-body-strong);
+  font-weight: 600;
+  line-height: var(--leading-body-strong);
+  letter-spacing: var(--tracking-body-strong);
+}
+
+.type-section-nav {
+  font-family: var(--font-sf-pro-text);
+  font-size: var(--text-section-nav);
+  font-weight: 500;
+  line-height: var(--leading-section-nav);
+  letter-spacing: var(--tracking-section-nav);
+}
+
+.type-product-label {
+  font-family: var(--font-sf-pro-display);
+  font-size: var(--text-product-label);
+  font-weight: 600;
+  line-height: var(--leading-product-label);
+  letter-spacing: var(--tracking-product-label);
+}
+
+.type-feature-stat {
+  font-family: var(--font-sf-pro-display);
+  font-size: var(--text-feature-stat);
+  font-weight: 600;
+  line-height: var(--leading-feature-stat);
+  letter-spacing: var(--tracking-feature-stat);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.type-hero-product-name {
+  font-family: var(--font-sf-pro-display);
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 600;
+  line-height: 1.13;
+  letter-spacing: 0.128px;
+}
+
+.type-display {
+  font-family: var(--font-sf-pro-display);
+  font-size: clamp(44px, 5.8vw, 80px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -1.2px;
+}
+
+.type-display-xl {
+  font-family: var(--font-sf-pro-display);
+  font-size: clamp(50px, 6.8vw, 96px);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -1.44px;
+}
+
+.type-section-headline {
+  font-family: var(--font-sf-pro-display);
+  font-size: clamp(32px, 3.8vw, 56px);
+  font-weight: 600;
+  line-height: 1.07;
+  letter-spacing: -0.84px;
+}
+
+.type-comparison-headline {
+  font-family: var(--font-sf-pro-display);
+  font-size: clamp(28px, 3.2vw, 48px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.24px;
+}
+
+.surface-carbon-band {
+  background: linear-gradient(#1d1d1f, #000000 288px);
+}
+
+.keyline-subtle {
+  box-shadow: var(--shadow-subtle);
+}
+
+.keyline-slate {
+  box-shadow: var(--shadow-subtle-2);
+}
+
+.numr-tabular {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* Smooth 800ms luxury image hover zoom */
+.img-hover-zoom {
+  transition: transform 800ms var(--ease-runbook);
+}
+
+.group:hover .img-hover-zoom,
+.img-hover-zoom:hover {
+  transform: scale(1.03);
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
