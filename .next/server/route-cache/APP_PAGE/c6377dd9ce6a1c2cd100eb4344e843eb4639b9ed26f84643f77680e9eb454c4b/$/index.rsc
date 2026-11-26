@@ -1,0 +1,21 @@
+1:"$Sreact.fragment"
+2:I[9766,[],""]
+3:I[8924,[],""]
+4:I[2619,["345","static/chunks/app/not-found-2cea73736b31b686.js"],""]
+5:I[1959,[],"ClientPageRoot"]
+6:I[6637,["592","static/chunks/c15bf2b0-23b96f27db3d4449.js","92","static/chunks/92-a91b8992066d4612.js","974","static/chunks/app/page-569ad202435b6ccc.js"],"default"]
+9:I[4431,[],"OutletBoundary"]
+b:I[5278,[],"AsyncMetadataOutlet"]
+d:I[4431,[],"ViewportBoundary"]
+f:I[4431,[],"MetadataBoundary"]
+10:"$Sreact.suspense"
+12:I[7150,[],""]
+:HL["/_next/static/css/7a6e621bfffccf89.css","style"]
+0:{"P":null,"b":"533GjxlIK2NrCZ75ZpOXT","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/7a6e621bfffccf89.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"dark","children":["$","body",null,{"className":"bg-obsidian text-porcelain antialiased","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","main",null,{"className":"flex min-h-screen flex-col items-center justify-center bg-obsidian px-6 text-center text-porcelain","children":[["$","h1",null,{"className":"type-display text-porcelain","children":"404"}],["$","p",null,{"className":"type-section-nav mt-3 text-ash","children":"The requested atelier page could not be found."}],["$","$L4",null,{"href":"/","className":"type-utility-nav mt-6 rounded-[170px] bg-primary px-5 py-2.5 font-semibold text-on-primary transition-colors hover:bg-tertiary","children":"Return to Maison Aurélia"}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L5",null,{"Component":"$6","searchParams":{},"params":{},"promises":["$@7","$@8"]}],null,["$","$L9",null,{"children":["$La",["$","$Lb",null,{"promise":"$@c"}]]}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Ld",null,{"children":"$Le"}],null],["$","$Lf",null,{"children":["$","div",null,{"hidden":true,"children":["$","$10",null,{"fallback":null,"children":"$L11"}]}]}]]}],false]],"m":"$undefined","G":["$12",[]],"s":false,"S":true}
+7:{}
+8:"$0:f:0:1:2:children:1:props:children:0:props:params"
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+a:null
+13:I[622,[],"IconMark"]
+c:{"metadata":[["$","title","0",{"children":"MAISON AURÉLIA — Precision Skin, Hair & Beauty Atelier"}],["$","meta","1",{"name":"description","content":"Dark-stage luxury skincare, sculptural facial treatments, botanical hair architecture, and private atelier appointments."}],["$","meta","2",{"property":"og:title","content":"MAISON AURÉLIA — Precision Skin, Hair & Beauty Atelier"}],["$","meta","3",{"property":"og:description","content":"Sculptural facials, cold-pressed cellular serums, architectural hair styling, and private atelier appointments."}],["$","meta","4",{"property":"og:type","content":"website"}],["$","meta","5",{"name":"twitter:card","content":"summary"}],["$","meta","6",{"name":"twitter:title","content":"MAISON AURÉLIA — Precision Skin, Hair & Beauty Atelier"}],["$","meta","7",{"name":"twitter:description","content":"Sculptural facials, cold-pressed cellular serums, architectural hair styling, and private atelier appointments."}],["$","link","8",{"rel":"shortcut icon","href":"/images/aurelia-emblem.jpg"}],["$","link","9",{"rel":"icon","href":"/images/aurelia-emblem.jpg"}],["$","link","10",{"rel":"apple-touch-icon","href":"/images/aurelia-emblem.jpg"}],["$","$L13","11",{}]],"error":null,"digest":"$undefined"}
+11:"$c:metadata"
