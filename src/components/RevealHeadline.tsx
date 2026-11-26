@@ -71,7 +71,7 @@ export const RevealHeadline: React.FC<RevealHeadlineProps> = ({
   return (
     <Tag ref={containerRef} className={className}>
       {words.map((word, idx) => (
-        <span key={`${word}-${idx}`} className="inline-block overflow-hidden align-bottom">
+        <span key={`${word}-${idx}`} className="inline-block align-bottom">
           <span className="reveal-word inline-block will-change-transform">
             {word}
             {idx < words.length - 1 ? '\u00A0' : ''}
